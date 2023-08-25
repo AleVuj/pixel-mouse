@@ -25,29 +25,30 @@ export default function Home() {
     });
   };
 
-  const colorize = (e) => {
-    e.target.style.backgroundColor = 'black';
+  const colorize = (el) => {
+    el.target.style.backgroundColor = 'black';
     setTimeout(() => {
-      e.target.style.backgroundColor = 'transparent';
+      el.target.style.backgroundColor = 'transparent';
     }, 333);
   };
 
   return (
-    <main className={styles.main}>
+    <div className={styles.container}>
       <div className={styles.body}>
         <p>
           Pixel like cursor for people who are into arcade games and Pac-Man
         </p>
       </div>
       <div className={styles.grid}>
-        {[...Array(20).keys()].map((_, index) => {
-          return (
-            <div key={index} className={styles.column}>
-              {getBlocks()}
-            </div>
-          );
-        })}
+        {windowsWidth > 0 &&
+          [...Array(20).keys()].map((_, index) => {
+            return (
+              <div key={index} className={styles.column}>
+                {getBlocks()}
+              </div>
+            );
+          })}
       </div>
-    </main>
+    </div>
   );
 }
