@@ -1,7 +1,14 @@
 'use client';
 import styles from './page.module.css';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [windowsWidth, setWindowsWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowsWidth(window.innerWidth);
+  }, []);
+
   const getBlocks = () => {
     const blockSize = window.innerWidth * 0.05;
     const nbOfBlocks = Math.ceil(window.innerHeight / blockSize);
