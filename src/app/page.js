@@ -10,7 +10,7 @@ export default function Home() {
   }, []);
 
   const getBlocks = () => {
-    const blockSize = window.innerWidth * 0.05;
+    const blockSize = windowsWidth * 0.05;
     const nbOfBlocks = Math.ceil(window.innerHeight / blockSize);
     return [...Array(nbOfBlocks).keys()].map((_, index) => {
       return (
